@@ -30,8 +30,14 @@ const {  } = Astro.props
 
 <style lang="scss">
 
+nav::-webkit-scrollbar {
+  display: none;
+}
+
     nav {
       height: 40px;
+      overflow-x: scroll;
+
       
       .navbar__list {
         height: 100%;

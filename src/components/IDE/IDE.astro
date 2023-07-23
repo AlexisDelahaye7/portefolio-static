@@ -8,12 +8,16 @@ const { headerIcon, headerIconAlt } = Astro.props;
 
 import Header from './IDE.Header.astro';
 import Navbar from './IDE.Navbar.astro';
+import Leftbar from './IDE.Leftbar.astro';
 ---
 
 
 <section>
   <Header headerIcon={headerIcon} headerIconAlt={headerIconAlt} />
-  <Navbar/>
+  <main>
+    <Leftbar/>
+    <Navbar/>
+  </main>
 
 </section>
 
@@ -26,16 +30,15 @@ import Navbar from './IDE.Navbar.astro';
 
   section {
     font-family: "Consolas, 'Courier New', monospace";
-
     height: calc(100vh - 2*80px);
     margin: 80px;
     background-color: #1E1E1E;
   }
 
-
-
-  nav {
-
+  main {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    height: calc(100% - 50px);
   }
 
 </style>
