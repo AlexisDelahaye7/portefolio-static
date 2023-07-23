@@ -1,0 +1,81 @@
+---
+import Button from './IDE.Header.button.astro'
+
+interface Props {
+  headerIcon: string;
+  headerIconAlt: string;
+}
+
+const { headerIcon, headerIconAlt } = Astro.props
+---
+
+<header>
+  <ul class="header__toolbar">
+    <li>
+      <img class="header__toolbar__icon" src={headerIcon} alt={headerIconAlt}>
+    </li>
+  </ul>
+  
+  <h2 class="header__title">Présentation.md</h2>
+  
+  <div class="header__buttons">
+    <Button
+      buttonImageSrc= "./assets/images/underscore_icon.svg"
+    />
+    <Button
+      buttonImageSrc= "./assets/images/square_icon.svg"
+    />
+    <Button
+      buttonImageSrc= "./assets/images/cross_icon.svg"
+    />
+  </div>
+</header>
+
+<style lang="scss">
+
+  $header-padding: 10px;
+  
+header {
+  max-height: 50px;
+  background-color: #323233;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  align-content: center;
+  gap: calc(2 * $header-padding);
+  color: #ccc;
+
+  /* LEFT */
+  
+  .header__toolbar {
+    display: flex;
+    align-items: center;
+    gap: calc(2 * $header-padding);
+    
+    .header__toolbar__icon {
+      margin: $header-padding;
+      height: 25px;
+      width: 25px; 
+    }
+  }
+
+  /* CENTER */
+
+  .header__title {
+    text-align: center;
+    font-size: inherit;
+    align-self: center;
+  }
+  
+  /* RIGHT */
+
+  .header__buttons {
+    box-sizing: content-box;
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    align-content: center;
+    justify-content: flex-end;
+    height: 100%
+  }
+}
+</style>

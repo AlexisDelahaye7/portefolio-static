@@ -1,0 +1,44 @@
+---
+import  Tab from './IDE.Navbar.Tab.astro';
+interface Props {
+
+}
+
+const {  } = Astro.props
+---
+
+<nav>
+  <ul class="navbar__list">
+    <Tab
+      tabIconUrl="./assets/images/ide/ide.presentation.svg"
+      tabName="Présentation"
+    />
+    <Tab
+      tabIconUrl='./assets/images/ide/ide.cv.svg'
+      tabName='Curriculum Vitae'
+    />
+    <Tab
+      tabIconUrl='./assets/images/ide/ide.projets.svg'
+      tabName='Projets'
+    />
+    <Tab
+    tabIconUrl='./assets/images/ide/ide.contact.svg'
+    tabName='Contactez-moi'
+  />
+  </ul>
+</nav>
+
+<style lang="scss">
+
+    nav {
+      height: 40px;
+      
+      .navbar__list {
+        height: 100%;
+        background-color: #252526;
+        display: flex;
+        gap: 1px;
+      }
+    }
+    
+</style>

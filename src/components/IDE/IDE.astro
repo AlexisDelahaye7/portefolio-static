@@ -1,0 +1,41 @@
+---
+interface Props {
+  headerIcon: string;
+  headerIconAlt: string;
+}
+
+const { headerIcon, headerIconAlt } = Astro.props;
+
+import Header from './IDE.Header.astro';
+import Navbar from './IDE.Navbar.astro';
+---
+
+
+<section>
+  <Header headerIcon={headerIcon} headerIconAlt={headerIconAlt} />
+  <Navbar/>
+
+</section>
+
+<style lang="scss">
+@font-face {
+  font-family: "Consolas";
+  src: url("https://fonts.googleapis.com/css2?family=Consolas&display=swap");
+}
+
+
+  section {
+    font-family: "Consolas, 'Courier New', monospace";
+
+    height: calc(100vh - 2*80px);
+    margin: 80px;
+    background-color: #1E1E1E;
+  }
+
+
+
+  nav {
+
+  }
+
+</style>

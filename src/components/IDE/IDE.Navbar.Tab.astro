@@ -1,0 +1,71 @@
+---
+interface Props {
+  tabIconUrl: string;
+  tabName: string;
+}
+
+const { tabIconUrl, tabName } = Astro.props;
+---
+
+<li class="navbar__list__item" >
+  <img class="item__icon" src={tabIconUrl} alt={tabName}>
+  <span class="item__name">{tabName}</span>
+  <img class="item__close-button" src="./assets/images/cross_small_icon.svg" alt="close(non functionnal)">
+</li>
+
+<script>
+  window.addEventListener('load', () => {
+    const navbarListItem = document.querySelectorAll('.navbar__list__item');
+    navbarListItem.forEach(e => e.classList.remove('selected'));
+    navbarListItem[0].classList.add('selected');
+  });
+
+  const navbarListItem = document.querySelectorAll('.navbar__list__item');
+  navbarListItem.forEach(e => e.addEventListener('click', (e) => {
+    navbarListItem.forEach(e => e.classList.remove('selected'));
+    e.currentTarget.classList.toggle('selected');
+    
+    // TODO : display tab content
+
+  }));
+</script>
+
+<style lang="scss">
+
+.navbar__list__item {
+  height: 100%;
+  min-width: 150px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #2D2D2D;
+
+  .item__icon,
+  .item__name {
+    user-select: none;
+  }
+
+  .item__close-button:hover {
+    cursor: pointer;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    border-radius: .2rem;
+  }
+
+}
+
+.navbar__list__item:hover {
+  cursor: pointer;
+}
+
+.navbar__list__item.selected {
+  background-color: #1E1E1E;
+}
+
+.item__close-button {
+  margin-left: 20px;
+  padding: 2px;
+  height: 20px;
+  width: 20px;
+}
+
+</style>

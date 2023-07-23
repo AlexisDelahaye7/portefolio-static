@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  videoSource: string;
+  videoType: string;
+}
+
+const { title, subtitle, videoSource, videoType } = Astro.props;
+
+---
+
+
+<video id="background-video" autoplay loop muted playsinline>
+  <source src={videoSource} type={videoType} />
+</video>
+<header class="header">
+  <h1 class="header__title">{title}</h1>
+  <p class="header__subtitle">&lt; {subtitle} /&gt;</p>
+</header>
+
+<style lang="scss">
+
+  #background-video {
+    z-index: -1;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    user-select: none;
+    object-fit: cover;
+  }
+
+  .header {
+    user-select: none;
+    background-color: #000;
+    opacity: 1;
+    min-height: 100vh;
+    width: 100%;
+    mix-blend-mode: multiply;
+
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 20px;
+    padding: 20px;
+
+    .header__title,
+    .header__subtitle {
+      color: #F4E9CD;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+    }
+
+    .header__title {
+      font-size: 12vw;
+    }
+
+    .header__subtitle {
+      font-size: 5vw;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .header {
+      .header__title,
+      .header__subtitle {
+        text-align: left
+      }
+      
+      .header__title {
+        word-spacing: 100vw;
+        font-size: 20vw;
+      }
+      
+      .header__subtitle {
+        font-size: 8vw;
+      }
+    }
+  }
+
+</style>
