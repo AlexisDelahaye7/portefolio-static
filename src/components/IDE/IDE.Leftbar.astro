@@ -1,11 +1,47 @@
-<section>
-  icones de technologies
-</section>
+---
+const images = "./assets/images/techs"
+---
+
+<aside>
+  <div class="icon"><img src=`${images}/linux_icon.svg` alt="linux" title="Linux"></div>
+  <div class="icon"><img src=`${images}/macos_icon.svg` alt="macos" title="MacOS"></div>
+  <div class="icon"><img src=`${images}/webpack_icon.svg` alt="webpack" title="Webpack"></div>
+  <div class="icon"><img src=`${images}/vite_icon.svg` alt="vite" title="Vite"></div>
+  <div class="icon"><img src=`${images}/nodejs_icon.svg` alt="nodejs" title="NodeJS"></div>
+  <div class="icon"><img src=`${images}/psql_icon.svg` alt="postgres" title="PostgreSQL"></div>
+  <div class="icon"><img src=`${images}/sequelize_icon.svg` alt="sequelize" title="Sequelize"></div>
+  <div class="icon"><img src=`${images}/mongodb_icon.svg` alt="mongodb" title="MongoDB"></div>
+  <div class="icon"><img src=`${images}/react_icon.svg` alt="react" title="React"></div>
+  <div class="icon"><img src=`${images}/astro_icon.svg` alt="astro" title="Astro"></div>
+  <div class="icon"><img src=`${images}/sass_icon.svg` alt="sass" title="SASS"></div>
+  <div class="icon"><img src=`${images}/more_icon.svg` alt="and more" title="And more..."></div>
+</aside>
 
 <style lang="scss">
-  section {
+  
+  aside {
+    grid-area: Leftbar;
+    
     background-color: #333;
     display: flex;
     flex-direction: column;
+    padding: 7px;
+    gap: 10px;
+    height: 100%;
   }
+  
+  aside::-webkit-scrollbar{
+    width: 5px;
+    // TODO : must place scrollbar on the left side
+  }
+  
+  div:hover,
+  img:hover{
+  }
+
+  div {
+    user-select: none;
+    cursor: pointer;
+  }
+  
 </style>

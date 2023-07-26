@@ -2,9 +2,10 @@
 interface Props {
   tabIconUrl: string;
   tabName: string;
+  contentToLoad: string;
 }
 
-const { tabIconUrl, tabName } = Astro.props;
+const { tabIconUrl, tabName, contentToLoad } = Astro.props;
 ---
 
 <li class="navbar__list__item" >
@@ -22,6 +23,7 @@ const { tabIconUrl, tabName } = Astro.props;
 
   const navbarListItem = document.querySelectorAll('.navbar__list__item');
   navbarListItem.forEach(e => e.addEventListener('click', (e) => {
+    e.stopImmediatePropagation();
     navbarListItem.forEach(e => e.classList.remove('selected'));
     e.currentTarget.classList.toggle('selected');
     

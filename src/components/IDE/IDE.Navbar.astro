@@ -12,18 +12,22 @@ const {  } = Astro.props
     <Tab
       tabIconUrl="./assets/images/ide/ide.presentation.svg"
       tabName="Présentation"
+      contentToLoad="home"
     />
     <Tab
       tabIconUrl='./assets/images/ide/ide.cv.svg'
       tabName='Curriculum Vitae'
+      contentToLoad="cv"
     />
     <Tab
       tabIconUrl='./assets/images/ide/ide.projets.svg'
       tabName='Projets'
+      contentToLoad="projects"
     />
     <Tab
     tabIconUrl='./assets/images/ide/ide.contact.svg'
     tabName='Contactez-moi'
+    contentToLoad="contact"
   />
   </ul>
 </nav>
@@ -34,17 +38,16 @@ nav::-webkit-scrollbar {
   display: none;
 }
 
-    nav {
-      height: 40px;
-      overflow-x: scroll;
-
-      
-      .navbar__list {
-        height: 100%;
-        background-color: #252526;
-        display: flex;
-        gap: 1px;
-      }
-    }
+nav {
+  grid-area: Navbar;
+  overflow-x: scroll;
+  
+  .navbar__list {
+    height: 100%;
+    background-color: #252526;
+    display: flex;
+    gap: 1px;
+  }
+}
     
 </style>
