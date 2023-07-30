@@ -5,25 +5,22 @@ interface Props {
 const { buttonImageSrc } = Astro.props;
 ---
 
-
 <div class="button-container">
-  <img src={buttonImageSrc}></img>
+  <img src={buttonImageSrc} />
 </div>
 
 <style lang="scss">
+  .button-container {
+    height: 100%;
+    width: 40px;
+    display: flex;
+    place-items: center;
+    place-content: center;
+  }
 
-.button-container {
-  height: 100%;
-  width: 40px;
-  display: flex;
-  place-items: center;
-  place-content: center;
-}
-
-.button-container:hover {
-  cursor: pointer;
-  background-color: hsla(0, 0%, 100%, 0.2);
-  border-radius: .2rem;
-}
-
+  .button-container:hover {
+    cursor: pointer;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    border-radius: 0.2rem;
+  }
 </style>

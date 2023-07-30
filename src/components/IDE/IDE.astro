@@ -6,49 +6,50 @@ interface Props {
 
 const { headerIcon, headerIconAlt } = Astro.props;
 
-import Header from './IDE.Header.astro';
-import Navbar from './IDE.Navbar.astro';
-import Leftbar from './IDE.Leftbar.astro';
-import Content from './IDE.Content.astro';
-import Footer from './IDE.Footer.astro';
+import Header from "./IDE.Header.astro";
+import Navbar from "./IDE.Navbar.astro";
+import Leftbar from "./IDE.Leftbar.astro";
+import Content from "./IDE.Content.astro";
+import Footer from "./IDE.Footer.astro";
 ---
-
 
 <section>
   <Header headerIcon={headerIcon} headerIconAlt={headerIconAlt} />
   <main>
-    <Leftbar/>    <!-- <aside> -->
-    <Navbar/>     <!-- <nav> -->
-    <Content/>    <!-- <section> -->
-    <Footer/>     <!-- <footer> -->
+    <Leftbar />
+    <!-- <aside> -->
+    <Navbar />
+    <!-- <nav> -->
+    <Content />
+    <!-- <section> -->
+    <Footer />
+    <!-- <footer> -->
   </main>
-
 </section>
 
 <style lang="scss">
-@font-face {
-  font-family: "Consolas";
-  src: url("https://fonts.googleapis.com/css2?family=Consolas&display=swap");
-}
+  @font-face {
+    font-family: "Consolas";
+    src: url("https://fonts.googleapis.com/css2?family=Consolas&display=swap");
+  }
 
-main {
-  grid-template:
-    "Leftbar Navbar" 40px
-    "Leftbar Content" 1fr
-    "Footer Footer" 20px
-    / 60px 1fr;
-}
+  main {
+    grid-template:
+      "Leftbar Navbar" 40px
+      "Leftbar Content" 1fr
+      "Footer Footer" 20px
+      / 60px 1fr;
+  }
 
   section {
     font-family: "Consolas, 'Courier New', monospace";
     height: 100%;
     margin: 80px;
-    background-color: #1E1E1E;
+    background-color: #1e1e1e;
   }
 
   main {
     display: grid;
     height: 100%;
   }
-
 </style>

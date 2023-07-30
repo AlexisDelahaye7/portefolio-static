@@ -1,48 +1,39 @@
 ---
-import '../styles/_reset.css';
-import Layout from '../layouts/Layout.astro';
-import HeroHeader from '../components/HeroHeader.astro';
-import IDE from '../components/IDE/IDE.astro';
+import "../styles/_reset.css";
+import Layout from "../layouts/Layout.astro";
+import HeroHeader from "../components/HeroHeader.astro";
+import IDE from "../components/IDE/IDE.astro";
 ---
 
 <Layout title="Alexis Delahaye">
-	<HeroHeader
-		title="Alexis Delahaye"
-		subtitle="Web Developper"
-		videoSource="./assets/videos/background-waves.mp4"
-		videoType="video/mp4"
-	/>
-	<main>
-    <IDE
-      headerIcon="./assets/images/vscode_icon.svg"
-      headerIconAlt="Visual Studio Code icon"
-    />
-	</main> 
+  <HeroHeader title="Alexis Delahaye" subtitle="Web Developper" videoSource="./assets/videos/background-waves.mp4" videoType="video/mp4" />
+  <main>
+    <IDE headerIcon="./assets/images/vscode_icon.svg" headerIconAlt="Visual Studio Code icon" client:visible />
+  </main>
 </Layout>
 
 <style lang="scss" is:global>
-  
   // unused
   $main-color: #031926;
   $second-color: #468189;
-  $third-color: #77ACA2;
-  $fourth-color: #9DBEBB;
-  $fifth-color: #F4E9CD;
+  $third-color: #77aca2;
+  $fourth-color: #9dbebb;
+  $fifth-color: #f4e9cd;
   $fifth-color-transparent: #f4e9cdda;
   $padding: 20px;
-  $border-radius: .5rem;
+  $border-radius: 0.5rem;
 
-/* ROOT */
+  /* ROOT */
 
   :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-  
+
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
     background-color: #242424;
-  
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -50,38 +41,35 @@ import IDE from '../components/IDE/IDE.astro';
     -webkit-text-size-adjust: 100%;
   }
 
-/* SCROLLBAR */
+  /* SCROLLBAR */
 
-::-webkit-scrollbar {
-  z-index: 1;
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #000;
-}
-::-webkit-scrollbar-thumb {
-  border-radius: .5rem;
-  background: #888;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
+  ::-webkit-scrollbar {
+    z-index: 1;
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background: #888;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
-/* MISC */
+  /* MISC */
 
-* {
-  box-sizing: border-box;
-  
-}
+  * {
+    box-sizing: border-box;
+  }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
 
-h2 {
-  font-size: 2.3rem;
-}
-
-
+  h2 {
+    font-size: 2.3rem;
+  }
 </style>
