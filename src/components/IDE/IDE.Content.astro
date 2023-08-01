@@ -1,16 +1,23 @@
+---
+import ContentPath from './IDE.Content.Path.astro';
+---
+
 <section>
-  <div class="path">Portefolio > Présentation</div>
+  <ContentPath pathDestination='Présentation'/>
+  <p>Portfolio en construction</p>
 </section>
 
 <style lang="scss">
   section {
     grid-area: Content;
     padding: 10px 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-rows: min-content 1fr;
   }
 
-  .path {
-    // font-weight: bold;
-    color: #ccc;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  p {
+    text-align: center;
   }
+
 </style>

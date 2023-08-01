@@ -13,9 +13,9 @@ import Content from "./IDE.Content.astro";
 import Footer from "./IDE.Footer.astro";
 ---
 
-<section>
-  <Header headerIcon={headerIcon} headerIconAlt={headerIconAlt} />
+<section class="wrapper">
   <main>
+    <Header headerIcon={headerIcon} headerIconAlt={headerIconAlt} />
     <Leftbar />
     <!-- <aside> -->
     <Navbar />
@@ -33,23 +33,21 @@ import Footer from "./IDE.Footer.astro";
     src: url("https://fonts.googleapis.com/css2?family=Consolas&display=swap");
   }
 
-  main {
-    grid-template:
-      "Leftbar Navbar" 40px
-      "Leftbar Content" 1fr
-      "Footer Footer" 20px
-      / 60px 1fr;
-  }
-
   section {
     font-family: "Consolas, 'Courier New', monospace";
-    height: 100%;
-    margin: 80px;
-    background-color: #1e1e1e;
+    height: 100vh;
+    padding: 80px;
   }
 
   main {
     display: grid;
     height: 100%;
+    grid-template:
+      "Header Header" 50px
+      "Leftbar Navbar" 40px
+      "Leftbar Content" 1fr
+      "Footer Footer" 20px
+      / 60px 1fr;
+    background-color: #1e1e1e;
   }
 </style>

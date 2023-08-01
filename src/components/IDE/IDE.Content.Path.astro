@@ -1,0 +1,19 @@
+---
+interface Props {
+  pathDestinatioon: string;
+}
+
+const { pathDestination } = Astro.props;
+---
+
+<div class="path-container">
+  <div class="path">Portefolio > {pathDestination}</div>
+</div>
+
+<style lang="scss">
+  .path {
+    // font-weight: bold;
+    color: #ccc;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+</style>
